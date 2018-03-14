@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "WebHealth21024.data.unityweb",
+"asmCodeUrl": "WebHealth21024.asm.code.unityweb",
+"asmMemoryUrl": "WebHealth21024.asm.memory.unityweb",
+"asmFrameworkUrl": "WebHealth21024.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
