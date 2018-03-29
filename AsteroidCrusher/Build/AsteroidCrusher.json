@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "AsteroidCrusher.data.unityweb",
+"asmCodeUrl": "AsteroidCrusher.asm.code.unityweb",
+"asmMemoryUrl": "AsteroidCrusher.asm.memory.unityweb",
+"asmFrameworkUrl": "AsteroidCrusher.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
