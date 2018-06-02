@@ -1,0 +1,13 @@
+{
+"companyName": "JFuStudio",
+"productName": "KonicaAdventure",
+"dataUrl": "KonicaAdventure.data.unityweb",
+"asmCodeUrl": "KonicaAdventure.asm.code.unityweb",
+"asmMemoryUrl": "KonicaAdventure.asm.memory.unityweb",
+"asmFrameworkUrl": "KonicaAdventure.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
