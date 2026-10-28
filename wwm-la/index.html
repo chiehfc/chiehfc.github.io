@@ -1,0 +1,946 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tofu Guild LA Meetup</title>
+<meta name="description" content="Tofu Guild first gathering in Los Angeles, Nov 28 2026 — celebrating the 1st anniversary of Where Winds Meet. Event handbook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --ink: #17191c;
+    --ink-soft: #2b2e33;
+    --ink-mute: #5b5f66;
+    --paper: #f1ede4;
+    --paper-warm: #e8e2d5;
+    --paper-deep: #d9d0bd;
+    --rule: #bfb39b;
+    --accent: #2c4a6e;        /* 太平洋黛藍 */
+    --accent-deep: #1f3654;
+    --sun: #c2582c;           /* 洛城夕照 */
+    --gold: #a07e36;
+    --jade: #4a6b58;
+    --seal: #a6311f;
+    --on-ink: #f1ede4;
+    --on-ink-mute: rgba(241, 237, 228, 0.7);
+    --card: rgba(255, 253, 248, 0.55);
+    --tint-sun: rgba(194, 88, 44, 0.08);
+    --tint-jade: rgba(74, 107, 88, 0.09);
+    --tint-gold: rgba(160, 126, 54, 0.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ink: #e6e1d6;
+      --ink-soft: #c9c3b6;
+      --ink-mute: #8f8a80;
+      --paper: #15171a;
+      --paper-warm: #1d2024;
+      --paper-deep: #262a2f;
+      --rule: #474a4f;
+      --accent: #8fb0d8;
+      --accent-deep: #a9c4e6;
+      --sun: #e8855a;
+      --gold: #d6b062;
+      --jade: #86ad95;
+      --seal: #b8402c;
+      --on-ink: #15171a;
+      --on-ink-mute: rgba(21, 23, 26, 0.7);
+      --card: rgba(255, 255, 255, 0.03);
+      --tint-sun: rgba(232, 133, 90, 0.1);
+      --tint-jade: rgba(134, 173, 149, 0.1);
+      --tint-gold: rgba(214, 176, 98, 0.1);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ink: #e6e1d6;
+    --ink-soft: #c9c3b6;
+    --ink-mute: #8f8a80;
+    --paper: #15171a;
+    --paper-warm: #1d2024;
+    --paper-deep: #262a2f;
+    --rule: #474a4f;
+    --accent: #8fb0d8;
+    --accent-deep: #a9c4e6;
+    --sun: #e8855a;
+    --gold: #d6b062;
+    --jade: #86ad95;
+    --seal: #b8402c;
+    --on-ink: #15171a;
+    --on-ink-mute: rgba(21, 23, 26, 0.7);
+    --card: rgba(255, 255, 255, 0.03);
+    --tint-sun: rgba(232, 133, 90, 0.1);
+    --tint-jade: rgba(134, 173, 149, 0.1);
+    --tint-gold: rgba(214, 176, 98, 0.1);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans TC", system-ui, -apple-system, "PingFang TC", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif, h1, h2, h3, h4 { font-family: "Noto Serif TC", "Songti TC", serif; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; }
+  h1, h2, h3 { text-wrap: balance; }
+  a { color: var(--accent-deep); }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; }
+  strong { color: var(--ink); }
+
+  .page-shell { max-width: 960px; margin: 0 auto; padding: 48px 40px 96px; }
+
+  /* ---------- DRAFT STRIP ---------- */
+  .draft-strip {
+    display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+    border: 1px dashed var(--sun);
+    background: var(--tint-sun);
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .draft-strip b {
+    font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.2em;
+    color: var(--sun);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    border: 1px solid var(--ink);
+    background: var(--paper-warm);
+    padding: 44px 48px 48px;
+    margin-bottom: 44px;
+    overflow: hidden;
+  }
+  .hero::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--ink); pointer-events: none; }
+  .hero-sunline {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0 55%, var(--sun) 55% 80%, var(--gold) 80%);
+  }
+  .hero-meta {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px;
+    font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-mute);
+    margin-bottom: 30px; padding-right: 60px;
+  }
+  .hero-title-vertical {
+    position: absolute; right: 28px; top: 28px; bottom: 28px; width: 40px;
+    display: flex; align-items: center; justify-content: center;
+    writing-mode: vertical-rl;
+    font-family: "Noto Serif TC", serif; font-size: 13px; letter-spacing: 0.6em; color: var(--ink-mute);
+  }
+  .hero-banner {
+    font-weight: 900; font-size: 92px; line-height: 0.98; letter-spacing: 0.04em; margin: 0;
+  }
+  .hero-banner .accent { color: var(--accent); }
+  .hero-banner .sun { color: var(--sun); }
+  .hero-sub { font-family: "Noto Serif TC", serif; font-size: 21px; margin-top: 18px; color: var(--ink-soft); letter-spacing: 0.12em; }
+  .hero-sub .en { display: block; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); margin-top: 6px; }
+  .hero-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 36px; margin-right: 60px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .hero-grid > div { padding: 18px 22px; border-right: 1px dashed var(--rule); }
+  .hero-grid > div:last-child { border-right: none; }
+  .label {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em;
+    color: var(--ink-mute); text-transform: uppercase; margin-bottom: 6px;
+  }
+  .hero-grid .value { font-family: "Noto Serif TC", serif; font-size: 20px; font-weight: 500; }
+  .hero-grid .value small { display: block; font-family: "Noto Sans TC", sans-serif; font-size: 13px; font-weight: 400; color: var(--ink-mute); margin-top: 2px; }
+  .tbd {
+    display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; color: var(--sun); border: 1px solid currentColor;
+    padding: 0 6px; margin-left: 6px; vertical-align: 2px; line-height: 1.7; white-space: nowrap;
+  }
+  .seal {
+    position: absolute; bottom: 34px; right: 84px; width: 76px; height: 76px;
+    background: var(--seal); color: #f1ede4;
+    display: grid; grid-template-columns: 1fr 1fr; place-items: center;
+    font-family: "Noto Serif TC", serif; font-weight: 700; font-size: 23px;
+    transform: rotate(-4deg); opacity: 0.9;
+    box-shadow: inset 0 0 0 2px rgba(241, 237, 228, 0.3);
+  }
+
+  /* ---------- SECTION ---------- */
+  section { margin-bottom: 72px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 20px;
+    margin-bottom: 28px; padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink); position: relative;
+  }
+  .sec-head::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--ink); }
+  .sec-num { font-family: "Noto Serif TC", serif; font-size: 56px; font-weight: 900; line-height: 1; color: var(--accent); }
+  .sec-num-sub { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ink-mute); text-transform: uppercase; }
+  .sec-title { font-weight: 700; font-size: 32px; margin: 0; }
+  .sec-kicker { font-family: "Noto Serif TC", serif; font-size: 14px; color: var(--ink-mute); letter-spacing: 0.3em; writing-mode: vertical-rl; }
+
+  p { margin: 0 0 16px; color: var(--ink-soft); }
+  p.lede { font-family: "Noto Serif TC", serif; font-size: 19px; line-height: 1.85; color: var(--ink); margin-bottom: 28px; max-width: 46em; text-wrap: pretty; }
+  .note { font-size: 13px; color: var(--ink-mute); margin: 14px 0 0; }
+
+  .pull-quote {
+    font-family: "Noto Serif TC", serif; font-size: 24px; line-height: 1.6; text-align: center;
+    padding: 26px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    margin: 32px 0; letter-spacing: 0.15em;
+  }
+  .pull-quote .hl { color: var(--accent); }
+
+  /* ---------- OPEN ITEMS ---------- */
+  .todo { border: 1px solid var(--ink); background: var(--card); margin-bottom: 56px; }
+  .todo-head {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
+    background: var(--ink); color: var(--on-ink); padding: 12px 20px;
+  }
+  .todo-head h3 { margin: 0; font-size: 18px; letter-spacing: 0.1em; }
+  .todo-head span { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--on-ink-mute); }
+  .todo ul { list-style: none; margin: 0; padding: 6px 20px 10px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  .todo li { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--rule); font-size: 14px; }
+  .todo li .box { width: 13px; height: 13px; border: 1.5px solid var(--ink-mute); display: inline-block; transform: translateY(2px); }
+  .todo li .who { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-mute); }
+
+  /* ---------- DAY SCHEDULE ---------- */
+  .day-card { border: 1px solid var(--ink); background: var(--card); margin-bottom: 24px; display: grid; grid-template-columns: 168px 1fr; }
+  .day-tab { background: var(--ink); color: var(--on-ink); padding: 24px 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+  .day-no { font-family: "Noto Serif TC", serif; font-size: 56px; font-weight: 900; line-height: 0.9; }
+  .day-name { font-family: "Noto Serif TC", serif; font-size: 18px; letter-spacing: 0.3em; margin-top: 8px; }
+  .day-date { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--on-ink-mute); }
+  .day-body { padding: 20px 28px; }
+  .timeline { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+  .timeline li { display: grid; grid-template-columns: 88px 1fr; gap: 16px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px dashed var(--rule); }
+  .timeline li:last-child { border-bottom: none; padding-bottom: 0; }
+  .timeline .t { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .timeline .what { font-family: "Noto Serif TC", serif; font-size: 17px; font-weight: 500; }
+  .timeline .what em { font-style: normal; color: var(--ink-mute); font-family: "Noto Sans TC", sans-serif; font-size: 13px; font-weight: 400; display: block; margin-top: 2px; }
+
+  /* ---------- ACTIVITY CARDS ---------- */
+  .activity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .act { border: 1px solid var(--ink); padding: 22px 24px; background: var(--paper-warm); position: relative; }
+  .act-num { position: absolute; top: 18px; right: 22px; font-family: "Noto Serif TC", serif; font-size: 36px; font-weight: 900; color: var(--accent); opacity: 0.2; line-height: 1; }
+  .act-tag { display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em; background: var(--ink); color: var(--on-ink); padding: 3px 8px; margin-bottom: 10px; }
+  .act-title { font-size: 22px; font-weight: 700; margin: 0 0 4px; }
+  .act-sub { font-size: 13px; color: var(--ink-mute); margin-bottom: 12px; }
+  .act-list { margin: 0; padding: 12px 0 0; list-style: none; border-top: 1px dashed var(--rule); }
+  .act-list li { font-size: 14px; padding: 4px 0; color: var(--ink-soft); display: flex; gap: 10px; }
+  .act-list li::before { content: "·"; color: var(--sun); font-weight: 900; }
+
+  /* ---------- BUDGET ---------- */
+  .calc-bar {
+    display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center;
+    border: 1px solid var(--ink); background: var(--paper-warm); padding: 14px 20px; margin-bottom: 18px;
+  }
+  .calc-bar label { font-family: "Noto Serif TC", serif; font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+  .calc-bar input[type="range"] { width: 180px; accent-color: var(--accent); }
+  .calc-bar input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px; }
+  .calc-bar output { font-family: "JetBrains Mono", monospace; font-size: 15px; color: var(--accent); min-width: 3.5em; font-variant-numeric: tabular-nums; }
+
+  .fee-banner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border: 2px solid var(--ink); }
+  .fee-cell { padding: 22px 26px; border-right: 1px solid var(--ink); }
+  .fee-cell:last-child { border-right: none; }
+  .fee-cell.primary { background: var(--ink); color: var(--on-ink); }
+  .fee-cell.guest { background: var(--tint-gold); }
+  .fee-label { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 8px; }
+  .fee-cell.primary .fee-label, .fee-cell.primary .fee-note, .fee-cell.primary .currency { color: var(--on-ink-mute); }
+  .fee-amt { font-family: "Noto Serif TC", serif; font-size: 42px; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+  .currency { font-size: 17px; font-weight: 400; color: var(--ink-mute); margin-right: 6px; }
+  .fee-note { font-size: 12px; color: var(--ink-mute); margin-top: 8px; }
+
+  .guest-note {
+    margin-top: 18px; padding: 16px 22px; border: 1px dashed var(--rule); background: var(--card);
+    font-size: 13.5px; color: var(--ink-soft); line-height: 1.75;
+  }
+  .guest-note strong.h { font-family: "Noto Serif TC", serif; font-size: 15px; color: var(--accent); }
+
+  .budget-scroll { overflow-x: auto; margin-top: 32px; }
+  .budget { width: 100%; min-width: 640px; border-collapse: collapse; border: 1px solid var(--ink); background: var(--card); font-variant-numeric: tabular-nums; }
+  .budget th { background: var(--ink); color: var(--on-ink); font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-align: left; padding: 12px 14px; }
+  .budget th.r, .budget td.r { text-align: right; }
+  .budget td { padding: 13px 14px; border-bottom: 1px dashed var(--rule); vertical-align: middle; }
+  .budget td.n { font-family: "Noto Serif TC", serif; color: var(--accent); font-weight: 700; text-align: center; width: 44px; }
+  .budget td.item { font-family: "Noto Serif TC", serif; font-size: 16px; font-weight: 500; }
+  .budget td.item small { display: block; font-family: "Noto Sans TC", sans-serif; font-size: 12px; font-weight: 400; color: var(--ink-mute); margin-top: 2px; }
+  .budget td.m { font-family: "JetBrains Mono", monospace; font-size: 14px; }
+  .budget td.tot { font-family: "JetBrains Mono", monospace; font-size: 15px; font-weight: 700; text-align: right; }
+  .budget tr.addon td { background: var(--tint-gold); }
+  .budget tfoot td { background: var(--paper-deep); border-top: 2px solid var(--ink); border-bottom: none; font-family: "Noto Serif TC", serif; font-weight: 700; padding: 16px 14px; }
+  .budget tfoot td.grand { font-family: "JetBrains Mono", monospace; font-size: 18px; color: var(--accent); text-align: right; }
+
+  .logic-h { font-size: 20px; margin: 40px 0 14px; }
+  .logic { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .logic-card { border: 1px solid var(--rule); border-left: 4px solid var(--accent); padding: 16px 20px; background: var(--paper-warm); }
+  .logic-card h4 { margin: 0 0 6px; font-size: 15px; font-weight: 700; }
+  .logic-card p { margin: 0; font-size: 13px; color: var(--ink-mute); line-height: 1.65; }
+  .calc { display: block; margin-top: 8px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--ink); background: var(--card); padding: 6px 10px; border: 1px dashed var(--rule); }
+
+  /* ---------- PLAN A/B ---------- */
+  .ab-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--ink); }
+  .ab-col { padding: 26px 30px; }
+  .ab-col.a { background: var(--card); border-right: 1px solid var(--ink); }
+  .ab-col.b { background: var(--tint-jade); }
+  .ab-tag { display: inline-block; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; padding: 4px 10px; border: 1px solid currentColor; }
+  .ab-col.a .ab-tag { color: var(--sun); }
+  .ab-col.b .ab-tag { color: var(--jade); }
+  .ab-col h3 { font-size: 23px; margin: 0 0 6px; }
+  .ab-col h4 { font-size: 14px; color: var(--ink-mute); margin: 0 0 14px; font-weight: 400; letter-spacing: 0.1em; }
+  .ab-col ul { margin: 0 0 14px; padding-left: 18px; font-size: 14px; }
+  .ab-col ul li { margin-bottom: 6px; color: var(--ink-soft); }
+  .ab-col p { margin: 0; font-size: 13px; color: var(--ink-mute); }
+
+  .switch-rule {
+    margin-top: 10px; padding: 12px 16px; background: var(--paper-deep);
+    font-family: "JetBrains Mono", "Noto Sans TC", monospace; font-size: 12px; color: var(--ink-soft); line-height: 1.8;
+    border-left: 3px solid var(--sun);
+  }
+
+  .car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; }
+  .car { border-top: 2px solid var(--ink); padding-top: 12px; }
+  .car .label { color: var(--accent); }
+  .car h4 { margin: 0 0 6px; font-size: 16px; }
+  .car p { font-size: 13px; color: var(--ink-mute); margin: 0; }
+
+  /* ---------- PVP ---------- */
+  .pvp-frame { border: 1px solid var(--ink); padding: 32px 36px; background: var(--card); position: relative; }
+  .pvp-corner { position: absolute; width: 24px; height: 24px; border: 2px solid var(--accent); }
+  .pvp-corner.tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+  .pvp-corner.tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+  .pvp-corner.bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+  .pvp-corner.br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+  .pvp-title { text-align: center; margin-bottom: 24px; }
+  .pvp-cn { font-family: "Noto Serif TC", serif; font-size: 42px; font-weight: 900; letter-spacing: 0.4em; }
+  .pvp-cn .hl { color: var(--accent); }
+  .pvp-en { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); margin-top: 6px; }
+  .pvp-rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .pvp-rule { border-top: 2px solid var(--ink); padding-top: 12px; }
+  .pvp-rule .step { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 6px; }
+  .pvp-rule h4 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+  .pvp-rule p { font-size: 13px; color: var(--ink-mute); margin: 0; }
+  .prize-table { margin-top: 28px; border: 1px solid var(--ink); }
+  .prize-row { display: grid; grid-template-columns: 80px 1fr 130px 110px; align-items: center; border-bottom: 1px dashed var(--rule); padding: 14px 18px; gap: 16px; }
+  .prize-row:last-child { border-bottom: none; }
+  .prize-rank { font-family: "Noto Serif TC", serif; font-size: 24px; font-weight: 900; color: var(--accent); text-align: center; }
+  .prize-rank.bronze { color: var(--gold); }
+  .prize-name { font-family: "Noto Serif TC", serif; font-size: 16px; }
+  .prize-name small { display: block; font-family: "Noto Sans TC", sans-serif; font-size: 12px; color: var(--ink-mute); margin-top: 2px; }
+  .prize-amt { font-family: "JetBrains Mono", monospace; font-size: 14px; text-align: right; color: var(--ink-soft); }
+  .prize-tag { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.15em; color: var(--ink-mute); text-align: center; }
+
+  /* ---------- REFUND ---------- */
+  .refund-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: stretch; }
+  .flow-step { border: 1px solid var(--ink); padding: 18px; background: var(--paper-warm); }
+  .flow-arrow { align-self: center; font-family: "Noto Serif TC", serif; font-size: 22px; color: var(--accent); padding: 0 8px; }
+  .flow-step .label { margin-bottom: 4px; }
+  .flow-step h4 { font-size: 15px; margin: 0 0 4px; }
+  .flow-step p { font-size: 12px; color: var(--ink-mute); line-height: 1.55; margin: 0; }
+  .refund-rule { margin-top: 24px; padding: 24px 28px; background: var(--ink); color: var(--on-ink); display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: center; }
+  .refund-rule h3 { font-size: 22px; margin: 0; }
+  .refund-rule p { margin: 0; color: var(--on-ink); opacity: 0.88; font-size: 14px; line-height: 1.9; }
+  .refund-rule strong { color: var(--on-ink); }
+  .refund-rule .quote { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--gold); margin-top: 10px; display: block; }
+
+  /* ---------- REGISTER ---------- */
+  .reg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .reg-card { border: 1px solid var(--ink); padding: 24px 28px; }
+  .reg-card h3 { font-size: 18px; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px dashed var(--rule); }
+  .reg-card dl { margin: 0; }
+  .reg-card dt { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-top: 12px; }
+  .reg-card dt:first-child { margin-top: 0; }
+  .reg-card dd { margin: 4px 0 0; font-size: 14px; color: var(--ink-soft); }
+  .reg-card dd.big { font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 700; color: var(--accent); }
+  .cta {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+    margin-top: 32px; padding: 26px 32px; border: 2px dashed var(--ink); color: var(--ink);
+    font-family: "Noto Serif TC", serif;
+  }
+  .cta .big { font-size: 24px; font-weight: 700; letter-spacing: 0.06em; }
+  .cta .sm { font-size: 13px; color: var(--ink-mute); margin-top: 4px; font-family: "Noto Sans TC", sans-serif; }
+
+  /* ---------- FOOTER ---------- */
+  .colophon {
+    border-top: 2px solid var(--ink); margin-top: 64px; padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;
+    font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--ink-mute); text-transform: uppercase;
+  }
+  .colophon .right { text-align: right; }
+  .colophon .tofu { font-family: "Noto Serif TC", serif; font-size: 18px; color: var(--ink); letter-spacing: 0.5em; margin-bottom: 6px; }
+
+  @media print { section { break-inside: avoid; } .calc-bar { display: none; } }
+
+  @media (max-width: 800px) {
+    .page-shell { padding: 20px 16px 64px; }
+    .hero { padding: 28px 22px 34px; }
+    .hero-banner { font-size: 54px; }
+    .hero-title-vertical { display: none; }
+    .hero-meta, .hero-grid { padding-right: 0; margin-right: 0; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-grid > div { border-right: none; border-bottom: 1px dashed var(--rule); }
+    .hero-grid > div:last-child { border-bottom: none; }
+    .seal { width: 56px; height: 56px; font-size: 17px; right: 20px; top: 22px; bottom: auto; }
+    .sec-num { font-size: 42px; }
+    .sec-title { font-size: 25px; }
+    .sec-kicker { display: none; }
+    .todo ul, .activity-grid, .reg-grid, .logic, .ab-grid, .pvp-rules, .car-grid, .fee-banner, .refund-rule { grid-template-columns: 1fr; }
+    .ab-col.a { border-right: none; border-bottom: 1px solid var(--ink); }
+    .fee-cell { border-right: none; border-bottom: 1px solid var(--ink); }
+    .fee-cell:last-child { border-bottom: none; }
+    .day-card { grid-template-columns: 1fr; }
+    .day-tab { flex-direction: row; align-items: flex-end; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+    .refund-flow { grid-template-columns: 1fr; gap: 10px; }
+    .flow-arrow { display: none; }
+    .prize-row { grid-template-columns: 48px 1fr 80px; }
+    .prize-tag { display: none; }
+    .pvp-frame { padding: 28px 20px; }
+    .pvp-cn { font-size: 32px; letter-spacing: 0.25em; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<style>
+  .fee-banner.two { grid-template-columns: 1.2fr 1fr; }
+  .day-card.single .day-tab { justify-content: space-between; }
+  .timeline .dur { display: block; font-size: 11px; color: var(--ink-mute); font-weight: 400; margin-top: 2px; }
+
+  /* ---------- Anniversary badge ---------- */
+  .anniv {
+    display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+    margin-top: 20px; padding: 8px 18px;
+    border: 1px solid var(--gold); background: var(--tint-gold);
+    font-family: "Noto Serif TC", serif; font-size: 16px; font-weight: 700;
+    letter-spacing: 0.16em; color: var(--ink);
+  }
+  .anniv .yr {
+    font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase;
+  }
+  /* ---------- Proposal cards ---------- */
+  .prop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .prop { border: 1px solid var(--ink); background: var(--card); padding: 20px 24px; }
+  .prop .label { color: var(--accent); }
+  .prop h3 { font-size: 19px; margin: 0 0 10px; }
+  .prop p { font-size: 14px; margin: 0; line-height: 1.75; }
+  .prop ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .prop ul + p { margin-top: 10px; color: var(--ink-mute); font-size: 13px; }
+  .prop li { margin-bottom: 6px; color: var(--ink-soft); line-height: 1.6; }
+
+  @media (max-width: 800px) {
+    .fee-banner.two { grid-template-columns: 1fr; }
+    .anniv { font-size: 14px; letter-spacing: 0.1em; padding: 7px 14px; }
+    .prop-grid { grid-template-columns: 1fr; }
+    .prop { padding: 16px 18px; }
+  }
+</style>
+
+<style>
+  /* ---------- English edition: Latin typography tuning ---------- */
+  body { font-family: "Noto Sans TC", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif; }
+  .hero-banner { font-size: 76px; letter-spacing: 0.01em; }
+  .hero-sub { font-size: 19px; letter-spacing: 0.05em; }
+  .hero-title-vertical { font-size: 11px; letter-spacing: 0.3em; }
+  .sec-num { font-size: 46px; letter-spacing: 0.02em; }
+  .sec-title { font-size: 30px; }
+  .day-no { font-size: 48px; }
+  .day-name { font-size: 16px; letter-spacing: 0.2em; }
+  .anniv { letter-spacing: 0.04em; font-size: 15px; }
+  .pull-quote { font-size: 21px; letter-spacing: 0.1em; }
+  .colophon .tofu { font-size: 17px; letter-spacing: 0.32em; }
+  .refund-rule h3 { letter-spacing: 0.04em; }
+  @media (max-width: 800px) {
+    .hero-banner { font-size: 44px; }
+    .sec-title { font-size: 23px; }
+    .pull-quote { font-size: 17px; letter-spacing: 0.06em; }
+    .anniv { font-size: 13.5px; }
+  }
+</style>
+
+<div class="page-shell">
+
+  <!-- ============== HERO ============== -->
+  <header class="hero">
+    <div class="hero-meta">
+      <span>Tofu Guild</span>
+      <span>VOL.001 / Los Angeles / 2026</span>
+    </div>
+
+    <h1 class="hero-banner">FIRST<br>GATHER<span class="sun">ING</span></h1>
+
+    <div class="hero-sub">
+      Where Winds Meet &middot; Tofu Guild &middot; One-Day Meetup in Los Angeles
+      <span class="en">SATURDAY, NOVEMBER 28, 2026 &middot; ONE DAY</span>
+    </div>
+
+    <div class="anniv">Celebrating the 1st Anniversary of Where Winds Meet<span class="yr">Tofu Guild &middot; Los Angeles</span></div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="label">Date</div>
+        <div class="value">Nov 28 (Sat)<small>One day &middot; 11:30 until after dinner</small></div>
+      </div>
+      <div>
+        <div class="label">Locale</div>
+        <div class="value">Los Angeles, CA<small>Lunch in LA &middot; KTV and dinner in San Gabriel</small></div>
+      </div>
+      <div>
+        <div class="label">Headcount</div>
+        <div class="value"><span data-out="head">10</span> people<small>Cap 15 &middot; closes when full</small></div>
+      </div>
+    </div>
+
+    <div class="hero-title-vertical">CITY OF ANGELS</div>
+    <div class="seal" aria-hidden="true"><span>百</span><span>業</span><span>豆</span><span>腐</span></div>
+    <div class="hero-sunline" aria-hidden="true"></div>
+  </header>
+
+  <p class="lede">
+    Where Winds Meet turns one, and the Tofu Guild is marking it with its first in-person gathering — in Los Angeles.
+    One day only: Thai food at Very Thai for lunch, five hours of karaoke and mahjong through the afternoon,
+    then a proper dinner before everyone heads home. The date and all three venues are confirmed;
+    registration details follow.
+  </p>
+
+  <!-- ============== OPEN ITEMS ============== -->
+  <div class="todo">
+    <div class="todo-head">
+      <h3>Open Items</h3>
+      <span>CHECKED OFF AS THEY ARE CONFIRMED</span>
+    </div>
+    <ul>
+      <li><span class="box"></span><span>Very Thai group reservation (branch / headcount)</span><span class="who">Organizer</span></li>
+      <li><span class="box"></span><span>D&#39;vine plus KTV room booking (5 hr / mahjong table)</span><span class="who">Organizer</span></li>
+      <li><span class="box"></span><span>Momo Bistro dinner reservation</span><span class="who">Organizer</span></li>
+      <li><span class="box"></span><span>Registration form + payment deadline</span><span class="who">Organizer</span></li>
+      <li><span class="box"></span><span>Driver sign-up and carpool groups</span><span class="who">Drivers</span></li>
+    </ul>
+  </div>
+
+  <!-- ============== 01 PROPOSAL ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">I</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 01 &middot; Proposal</div>
+        <h2 class="sec-title">The Proposal &middot; What Kind of Meetup This Is</h2>
+      </div>
+    </div>
+
+    <div class="prop-grid">
+      <div class="prop">
+        <div class="label">Theme &amp; Vibe</div>
+        <h3>One Day in the Jianghu — from teahouse to stage</h3>
+        <p>We are taking the most everyday side of Where Winds Meet — resting at a teahouse, catching up with
+        your sect, listening to music, sparring, sharing a hot meal — and staging it in Los Angeles. Lunch at a
+        Thai restaurant stands in for the teahouse stop, the afternoon KTV room becomes the stage, and a
+        banquet-style dinner closes the day. No panels and no scripted programme: people from the same guild
+        meeting, eating and playing for one full day.</p>
+      </div>
+      <div class="prop">
+        <div class="label">Main Activities</div>
+        <h3>Sing, quiz, play, feast — all running at once</h3>
+        <ul>
+          <li><strong>Jianghu trivia</strong>: a 30-question Where Winds Meet quiz, teams buzzing in, keepsakes for the top three</li>
+          <li><strong>Anniversary watch-along</strong>: official anniversary videos and player retrospectives on the room screen</li>
+          <li><strong>Karaoke</strong>: game OST and wuxia classics get first pick of the queue</li>
+          <li><strong>Mahjong table</strong>: running all afternoon, scored with chips only — no real money</li>
+          <li><strong>Co-op session</strong>: parties formed on the spot for dungeons and world bosses on mobile</li>
+          <li><strong>Badges &amp; group photo</strong>: name badges with in-game IDs at the door, group photo at dinner</li>
+        </ul>
+      </div>
+      <div class="prop">
+        <div class="label">Venue</div>
+        <h3>Three stops across greater Los Angeles, minutes apart</h3>
+        <ul>
+          <li><strong>Lunch</strong>&nbsp;&nbsp;Very Thai (Los Angeles)</li>
+          <li><strong>Afternoon</strong>&nbsp;&nbsp;D&#39;vine plus KTV (San Gabriel) &middot; 5-hour room, all-inclusive</li>
+          <li><strong>Dinner</strong>&nbsp;&nbsp;Momo Bistro (San Gabriel)</li>
+        </ul>
+        <p>The afternoon and evening stops are both in San Gabriel — the heart of the Chinese community in
+        Southern California, where parking is easy, the food suits the group, and each leg is a ten-minute drive.</p>
+      </div>
+      <div class="prop">
+        <div class="label">Why this is great</div>
+        <h3>The players are already here — nobody has run the first one</h3>
+        <ul>
+          <li>Southern California has a large Chinese-speaking player base, yet almost no Where Winds Meet meetups — this would be the first</li>
+          <li>One day end to end: no time off work, and out-of-town Wanderers can fly in and out the same day</li>
+          <li>About $150 a head covers three meals and a five-hour room; every expense is published and all surplus refunded</li>
+          <li>The itinerary <em>is</em> the game&rsquo;s daily life — eating, music, sparring, tiles — lifted into the real world</li>
+          <li>Capped at 15 so everyone actually gets to talk, rather than a crowd where you meet no one</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 02 ITINERARY ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">II</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 02 &middot; Itinerary</div>
+        <h2 class="sec-title">One-Day Itinerary</h2>
+      </div>
+    </div>
+
+    <div class="day-card single">
+      <div class="day-tab">
+        <div><div class="day-no">I</div><div class="day-name">MEETUP</div></div>
+        <div class="day-date">SAT &middot; NOV 28</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li><span class="t">11:15<span class="dur">arrival</span></span><span class="what">Meet at the Very Thai entrance &middot; name badges<em>Branch to be confirmed; drivers pick up per the carpool sheet</em></span></li>
+          <li><span class="t">11:30<span class="dur">~1.5 hr</span></span><span class="what">Lunch &middot; Very Thai<em>Group table, shared dishes; the organizer reserves ahead</em></span></li>
+          <li><span class="t">13:00<span class="dur">~30 min</span></span><span class="what">Carpool to the KTV<em>Depart in assigned groups; ~30 min drive plus a parking buffer</em></span></li>
+          <li><span class="t">14:00<span class="dur">5 hr</span></span><span class="what">D&#39;vine plus KTV &middot; the stage<em>San Gabriel &middot; 14:00&ndash;19:00 all-inclusive, room plus food and drinks. Karaoke and mahjong run throughout; trivia around 15:30, anniversary watch-along and co-op from 16:30</em></span></li>
+          <li><span class="t">19:00<span class="dur">~30 min</span></span><span class="what">Drive to dinner<em>Also in San Gabriel — a short hop</em></span></li>
+          <li><span class="t">19:30<span class="dur">~2 hr</span></span><span class="what">Dinner &middot; Momo Bistro<em>Guild dinner, group table, shared dishes</em></span></li>
+          <li><span class="t">21:30</span><span class="what">Group photo &middot; farewells<em>No driving after drinking; confirm return carpools before leaving</em></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 02 PROGRAM ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">III</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 03 &middot; Program</div>
+        <h2 class="sec-title">The Day, Part by Part</h2>
+      </div>
+    </div>
+
+    <div class="activity-grid">
+      <div class="act">
+        <span class="act-num">01</span>
+        <span class="act-tag">11:30 &middot; LUNCH</span>
+        <h3 class="act-title">Very Thai</h3>
+        <div class="act-sub">Thai cuisine &middot; confirmed</div>
+        <ul class="act-list">
+          <li>Group table, shared dishes; the organizer reserves by headcount</li>
+          <li>Note allergies or dietary restrictions on the registration form</li>
+          <li>Branch and address announced once confirmed</li>
+        </ul>
+      </div>
+      <div class="act">
+        <span class="act-num">02</span>
+        <span class="act-tag">14:00 &middot; KTV</span>
+        <h3 class="act-title">D&#39;vine plus KTV</h3>
+        <div class="act-sub">San Gabriel &middot; five hours on the mic</div>
+        <ul class="act-list">
+          <li>5-hour room (14:00&ndash;19:00), seats 10&ndash;15</li>
+          <li>$600 all-inclusive: room, food and drinks</li>
+          <li>A room with an automatic mahjong table preferred</li>
+          <li>Mahjong is scored with chips only — <strong>no real money involved</strong></li>
+        </ul>
+      </div>
+      <div class="act">
+        <span class="act-num">03</span>
+        <span class="act-tag">19:30 &middot; DINNER</span>
+        <h3 class="act-title">Momo Bistro</h3>
+        <div class="act-sub">The closing meal &middot; confirmed</div>
+        <ul class="act-list">
+          <li>Group table, shared dishes; the organizer reserves by headcount</li>
+          <li>A short drive from the KTV</li>
+          <li>Group photo at the table</li>
+        </ul>
+      </div>
+      <div class="act">
+        <span class="act-num">04</span>
+        <span class="act-tag">ALL DAY</span>
+        <h3 class="act-title">Name Badges</h3>
+        <div class="act-sub">A keepsake from the first gathering</div>
+        <ul class="act-list">
+          <li>Included in the fee; write your name or in-game handle</li>
+          <li>1st Anniversary &times; First Gathering keepsake, one each</li>
+          <li>Handed out when the group meets for lunch</li>
+        </ul>
+      </div>
+      <div class="act">
+        <span class="act-num">05</span>
+        <span class="act-tag">IN-ROOM &middot; ~45 MIN</span>
+        <h3 class="act-title">Jianghu Trivia</h3>
+        <div class="act-sub">30 questions &middot; team scoring</div>
+        <ul class="act-list">
+          <li>Questions cover sects, martial arts, maps and NPCs</li>
+          <li>Two or three teams buzz in; keepsakes for the top three</li>
+          <li>Alternates with karaoke so the room never goes quiet</li>
+        </ul>
+      </div>
+      <div class="act">
+        <span class="act-num">06</span>
+        <span class="act-tag">IN-ROOM &middot; ALL AFTERNOON</span>
+        <h3 class="act-title">Watch-Along &amp; Co-op</h3>
+        <div class="act-sub">Big screen &middot; parties on the spot</div>
+        <ul class="act-list">
+          <li>Official anniversary videos and player retrospectives on the room screen</li>
+          <li>Mobile parties formed on the spot for dungeons and world bosses</li>
+          <li>A quieter corner stays open for anyone who just wants to talk</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 03 BUDGET ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">IV</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 04 &middot; Budget (Estimate)</div>
+        <h2 class="sec-title">Budget &middot; Every Dollar Accounted For</h2>
+      </div>
+    </div>
+
+    <p class="lede">
+      Payments run through <strong>Venmo</strong>. The organizer fronts the costs and publishes a full ledger
+      within three days of the event. The figures below assume <strong><span data-out="head">10</span> people</strong>,
+      for a total budget of <strong>$1,500</strong>. The KTV is estimated at $600 all-inclusive (room, food and drinks),
+      with the remaining budget going to lunch and dinner. Actual costs may swing &plusmn;20%; the final
+      settlement governs, and any surplus is returned.
+    </p>
+
+    <div class="calc-bar">
+      <label for="headcount">Headcount estimate
+        <input type="range" id="headcount" min="5" max="15" step="1" value="10">
+        <output id="headcount-out" for="headcount">10 people</output>
+      </label>
+    </div>
+
+    <div class="fee-banner two">
+      <div class="fee-cell primary">
+        <div class="fee-label">Estimated fee per person</div>
+        <div class="fee-amt"><span class="currency">USD</span>$<span data-out="per-head">0</span></div>
+        <div class="fee-note" data-out="per-head-note"></div>
+      </div>
+      <div class="fee-cell">
+        <div class="fee-label">Not included</div>
+        <div class="fee-amt" style="font-size:18px;font-weight:500;line-height:1.5">Lodging &middot; Airfare &middot; Gas</div>
+        <div class="fee-note">Covered by each attendee; gas is split within each carpool</div>
+      </div>
+    </div>
+
+    <div class="budget-scroll">
+      <table class="budget">
+        <thead>
+          <tr><th>#</th><th>Item</th><th>Unit</th><th class="r">Unit USD</th><th class="r">Qty</th><th class="r">Subtotal USD</th></tr>
+        </thead>
+        <tbody id="budget-body"></tbody>
+        <tfoot>
+          <tr><td></td><td colspan="4">Total (estimated)</td><td class="grand">$<span data-out="grand">0</span></td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <h3 class="logic-h">How the estimate is built</h3>
+    <div class="logic">
+      <div class="logic-card">
+        <h4>Lunch &middot; $36 per person</h4>
+        <p>Shared dishes run about $28&ndash;30 a head, plus tax and an 18% group gratuity. The wider budget leaves room for a few more dishes.</p>
+        <span class="calc">$36 &times; <span data-out="head">10</span> = $<span data-out="lunch">360</span></span>
+      </div>
+      <div class="logic-card">
+        <h4>KTV &middot; D&#39;vine plus, 5 hr at $600</h4>
+        <p>14:00&ndash;19:00 all-inclusive: room charge plus food and drinks. Locked to a fixed price once the room is booked.</p>
+        <span class="calc">$600 &divide; <span data-out="head">10</span> = $<span data-out="ktv">60</span>/person</span>
+      </div>
+      <div class="logic-card">
+        <h4>Dinner &middot; $46 per person</h4>
+        <p>A group table at Momo Bistro runs about $38&ndash;40 a head including tax and tip; the wider budget allows for extra dishes.</p>
+        <span class="calc">$46 &times; <span data-out="head">10</span> = $<span data-out="dinner">460</span></span>
+      </div>
+      <div class="logic-card">
+        <h4>Badges &middot; Parking &middot; Buffer</h4>
+        <p>Custom badges $25, parking across three stops about $40, supplies and contingency $15 — reimbursed against receipts.</p>
+        <span class="calc">$80 &divide; <span data-out="head">10</span> = $<span data-out="misc">8</span>/person</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 04 TRANSPORT ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">V</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 05 &middot; Transport</div>
+        <h2 class="sec-title">Getting Around &middot; Three Stops, One Day</h2>
+      </div>
+    </div>
+
+    <p class="lede">
+      Three stops in one day, and LA is hard going without a car. Carpool groups are arranged in advance;
+      allow 30 minutes for each leg, and anyone running late meets the group at the next stop.
+    </p>
+
+    <div class="car-grid" style="margin-top:0">
+      <div class="car">
+        <div class="label">Carpool</div>
+        <h4>Drivers paired with riders</h4>
+        <p>The form asks whether you drive and how many you can take. The organizer assigns cars by neighbourhood, 3&ndash;4 per car, same car all day.</p>
+      </div>
+      <div class="car">
+        <div class="label">Airport</div>
+        <h4>LAX / BUR / LGB</h4>
+        <p>Out-of-town guests: give us your flight. Arriving the night before is recommended; be at Very Thai by 11:15.</p>
+      </div>
+      <div class="car">
+        <div class="label">Parking</div>
+        <h4>Parking comes out of the buffer</h4>
+        <p>Keep receipts at all three stops; reimbursed from the incidentals buffer. Gas is split within each carpool.</p>
+      </div>
+    </div>
+
+    <div class="switch-rule" style="margin-top:22px">
+      Contingency &middot; Switch Rule<br>
+      &rarr; If the KTV runs late or the room falls through, we move to a backup KTV near the dinner restaurant, or go to dinner early<br>
+      &rarr; Any loss on a reservation is absorbed by the pooled fee — no extra charge to members
+    </div>
+  </section>
+
+  <!-- ============== 05 SETTLEMENT ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">VI</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 06 &middot; Settlement</div>
+        <h2 class="sec-title">Settlement &amp; Refunds</h2>
+      </div>
+    </div>
+
+    <p class="lede">
+      Everyone pre-pays the same flat fee. Within three days of the event the organizer closes the books and
+      publishes an itemised ledger. Any surplus is <strong>split evenly among those who paid</strong>; any
+      overrun is published in full and collected evenly from everyone.
+    </p>
+
+    <div class="refund-flow">
+      <div class="flow-step"><div class="label">Step 01</div><h4>Pay before the deadline</h4><p>Venmo the organizer, memo: your name + &ldquo;LA Meetup&rdquo;</p></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="label">Step 02</div><h4>Organizer fronts the costs</h4><p>Reservations, deposits and supplies handled centrally</p></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="label">Step 03</div><h4>Books closed within 3 days</h4><p>Public Google Sheet ledger, with receipts</p></div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-step"><div class="label">Step 04</div><h4>Surplus returned / overrun collected</h4><p>Completed within 72 hours</p></div>
+    </div>
+
+    <div class="refund-rule">
+      <h3>Three Refund<br>Rules</h3>
+      <div>
+        <p>
+          <strong>1. Fully transparent</strong>&nbsp;&nbsp;Every expense and receipt published in a Google Sheet.<br>
+          <strong>2. Everyone equal</strong>&nbsp;&nbsp;Surplus split evenly among those who paid, the same amount each.<br>
+          <strong>3. Every cent returned</strong>&nbsp;&nbsp;Even if it is $1 a head, it goes back. No slush fund.
+        </p>
+        <span class="quote">CODE OF HONOR &middot; TOFU GUILD &middot; 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 06 REGISTRATION ============== -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">VII</span>
+      <div style="flex:1">
+        <div class="sec-num-sub">Section 07 &middot; Registration</div>
+        <h2 class="sec-title">Registration</h2>
+      </div>
+    </div>
+
+    <div class="reg-grid">
+      <div class="reg-card">
+        <h3>Payment &amp; Timing</h3>
+        <dl>
+          <dt>Payment</dt><dd class="big">Venmo / Zelle</dd>
+          <dt>Memo</dt><dd>Your name + &ldquo;LA Meetup 2026&rdquo;</dd>
+          <dt>Deadline</dt><dd>Announced two weeks before the event<span class="tbd">TBD</span> (closes early at 15 people)</dd>
+          <dt>Cancellation</dt><dd>Full refund up to 7 days before; after that, only amounts not yet spent</dd>
+        </dl>
+      </div>
+      <div class="reg-card">
+        <h3>Sign-up &amp; Contact</h3>
+        <dl>
+          <dt>Form</dt><dd class="big">Not yet open<span class="tbd">TBD</span></dd>
+          <dt>Fields</dt><dd>Name / in-game ID / contact / dietary restrictions / whether you drive and seats available / flight (out-of-town)</dd>
+          <dt>Contact</dt><dd>Guild Discord channel<span class="tbd">TBD</span></dd>
+          <dt>Note</dt><dd>This page is for information only; the form is the official registration</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div>
+        <div class="label">Register</div>
+        <div class="big">The form link will be posted here once it opens</div>
+        <div class="sm">Opening soon &middot; watch the Discord announcement</div>
+      </div>
+      <div class="serif" style="font-size:34px;color:var(--ink-mute)">&rarr;</div>
+    </div>
+
+    <div class="pull-quote" style="margin-top:36px">
+      1ST ANNIVERSARY &middot; <span class="hl">FIRST GATHERING</span> &middot; ONE GUILD
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <div>
+      <div class="tofu">TOFU GUILD</div>
+      <div>TOFU GUILD &middot; WHERE WINDS MEET &middot; LOS ANGELES CHAPTER</div>
+    </div>
+    <div class="right">
+      <div>VOL.001 &middot; LOS ANGELES</div>
+      <div>2026 &middot; NOV 28 &middot; SAT</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Baseline of 10 people; per-head items scale proportionally.
+  var BUDGET = [
+    { id: "lunch", name: "Lunch &middot; Very Thai", sub: "11:30 &middot; group table &middot; tax and tip included", unit: "person", perHead: true, detail: [360] },
+    { id: "ktv", name: "KTV &middot; D'vine plus KTV, 5 hr", sub: "14:00-19:00 &middot; all-inclusive: room, food and drinks", unit: "session", perHead: false, detail: [600] },
+    { id: "dinner", name: "Dinner &middot; Momo Bistro", sub: "19:30 &middot; group table &middot; tax and tip included", unit: "person", perHead: true, detail: [460] },
+    { id: "misc", name: "Incidentals &middot; badges + parking + buffer", sub: "Badges $25 / parking $40 / supplies and contingency $15", unit: "&mdash;", perHead: false, detail: [25, 40, 15] }
+  ];
+  var NUM = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  var slider = document.getElementById("headcount");
+  var tbody = document.getElementById("budget-body");
+
+  function sum(a) { return a.reduce(function (s, x) { return s + x; }, 0); }
+  function setAll(key, val) {
+    document.querySelectorAll('[data-out="' + key + '"]').forEach(function (el) { el.textContent = val; });
+  }
+
+  function render() {
+    var head = +slider.value;
+    var items = BUDGET.map(function (b) {
+      var base = sum(b.detail);
+      return { b: b, qty: b.perHead ? head : 1, total: Math.round(b.perHead ? base * head / 10 : base) };
+    });
+    var subtotal = sum(items.map(function (i) { return i.total; }));
+    var grand = subtotal;
+
+    tbody.innerHTML = items.map(function (i, n) {
+      var unitPrice = i.b.perHead ? "~$" + (i.total / i.qty).toFixed(1) : "&mdash;";
+      return "<tr><td class='n'>" + NUM[n] + "</td><td class='item'>" + i.b.name + "<small>" + i.b.sub +
+        "</small></td><td class='m'>" + i.b.unit + "</td><td class='m r'>" + unitPrice + "</td><td class='m r'>" +
+        i.qty + "</td><td class='tot'>$" + i.total + "</td></tr>";
+    }).join("");
+
+    document.getElementById("headcount-out").textContent = head + " people";
+    setAll("head", head);
+    setAll("grand", grand);
+    setAll("per-head", Math.round(grand / head));
+    setAll("per-head-note", "Covers lunch, KTV, dinner and incidentals — no other add-ons");
+    setAll("lunch", 36 * head);
+    setAll("ktv", Math.round(600 / head));
+    setAll("dinner", 46 * head);
+    setAll("misc", Math.round(80 / head));
+  }
+
+  slider.addEventListener("input", render);
+  render();
+})();
+</script>
